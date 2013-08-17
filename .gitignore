@@ -1,0 +1,17 @@
+/web-app/WEB-INF
+.classpath
+.project
+.settings
+/*.launch
+/*.tmproj
+
+# IDE 
+*.sublime-project
+*.sublime-workspace
+
+# logs
+stacktrace.log
+/test/reports
+
+# project release file
+*.war
