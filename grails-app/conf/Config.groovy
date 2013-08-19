@@ -62,6 +62,8 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = 'http://sneakerhead.dev'
+        grails.app.context = '/'
     }
     production {
         grails.logging.jul.usebridge = false

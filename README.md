@@ -24,6 +24,7 @@ user can show off their collection.
 - The idea of following another user to have a facebook type wall on your home page listing new shoes added by friends.
 - find users by location
 - some kind of cool view that is just a wall of photos and you can click through to view details
+- mogodb integration
 
 Please send any ideas you have for this little ficticious application to danvega at gmail dot com.
 
