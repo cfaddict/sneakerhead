@@ -9,7 +9,7 @@ Public
  + Home page will just be a list of users that have profiles in our system
  + View list of shoes for a particular user. Allow sorting paging and searching.
  + Switch to grid view to show thumbnails instead of list.
- + View details shows pictures and allows for comments.
+ + View details shows pictures and allows for comments. Use https://disqus.com
  + details page will have some social integration with facebook + twitter. 
 
 Admin
