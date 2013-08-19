@@ -21,3 +21,5 @@ stacktrace.log
 # IDE 
 *.sublime-project
 *.sublime-workspace
+/.idea/
+/*.iml
