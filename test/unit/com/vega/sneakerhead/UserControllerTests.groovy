@@ -11,7 +11,26 @@ import org.junit.*
 @TestFor(UserController)
 class UserControllerTests {
 
-    void testSomething() {
-       fail "Implement me"
+	/** 
+	 * Test to make sure that the index action is redirecting to the list action 
+	 */
+    void testIndexRedirectedToList(){
+    	controller.index()
+
+    	assert response.redirectedUrl == '/user/list'
     }
+
+    void testList() {
+    	fail "do something"
+    }
+
+    void testSave() {
+    	fail "do something"
+    }
+
+    void testDelete() {
+    	fail "do something"
+    }
+
+
 }
