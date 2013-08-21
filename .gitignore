@@ -23,3 +23,6 @@ stacktrace.log
 *.sublime-workspace
 /.idea/
 /*.iml
+/projectFilesBackup/
+sneakerhead.ipr
+

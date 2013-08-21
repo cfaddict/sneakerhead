@@ -10,7 +10,7 @@ class Shoe {
 	Date dateCreated
 	Date lastUpdated 
 
-	static belongsTo = [brand : Brand]
+	static belongsTo = [ user : User, brand : Brand]
 	static hasMany 	 = [categories : Category, images:Image]
 
     static constraints = {

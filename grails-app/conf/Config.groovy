@@ -73,11 +73,18 @@ environments {
 
 // log4j configuration
 log4j = {
+
     // Example of changing the log pattern for the default console appender:
     //
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+
+
+    trace  'org.hibernate.type.descriptor.sql.BasicBinder'
+
+    debug  'org.hibernate.SQL', 
+           'grails.app.controllers'
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP

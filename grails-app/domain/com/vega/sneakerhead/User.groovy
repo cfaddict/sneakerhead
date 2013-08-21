@@ -5,25 +5,33 @@ import groovy.transform.ToString
 @ToString(includeNames=true)
 class User {
 
-	String firstName
-	String lastName
-	String handle
-	String email
-	String city
-	String state
-	double shoeSize
-	String bio
-	Date dateCreated
-	Date lastUpdated
+    String firstName
+    String lastName
+    String handle
+    String email
+    String city
+    String state
+    Double shoeSize
+    String bio
+    boolean active = Boolean.TRUE
+    Date dateCreated
+    Date lastUpdated
+
+    static hasMany = [shoes: Shoe]
 
     static constraints = {
-    	firstName blank:false
-    	lastName blank:false
-    	handle blank:false, unique:true 
-    	email blank:false, email:true
+        firstName blank:false
+        lastName blank:false
+        email blank:false, email:true
+        handle blank:false, unique:true
+        shoeSize nullable: true
+        bio nullable:true 
+        city nullable:true
+        state nullable:true
     }
 
     static mapping = {
-    	bio type:'text'
+        bio type:'text'
     }
+
 }
