@@ -7,6 +7,7 @@ class Shoe {
 
 	String title
 	String description
+	boolean active = Boolean.TRUE
 	Date dateCreated
 	Date lastUpdated 
 

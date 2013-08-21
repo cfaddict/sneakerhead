@@ -6,7 +6,7 @@ import groovy.transform.ToString
 class Category {
 
 	String name
-	Boolean active = Boolean.TRUE
+	boolean active = Boolean.TRUE
 	Date dateCreated
 	Date lastUpdated 
 

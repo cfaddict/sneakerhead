@@ -10,13 +10,12 @@ class Image {
 	String caption
 	Date dateCreated
 	Date lastUpdated
-	Boolean isMainImage = Boolean.FALSE
+	boolean isMainImage = Boolean.FALSE
 
 	static belongsTo = [ shoe : Shoe ]
 
     static constraints = {
     	name blank:false 
     	path nullable:false 
-    	isMainImage nullable:false 
     }
 }
