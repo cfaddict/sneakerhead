@@ -15,7 +15,10 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:mysql://localhost:3306/sneakerhead"
+            username = "sneakerhead"
+            password = "sn3ak3rh3ad"
+            dialect = com.vega.sneakerhead.MyCustomMySQL5InnoDBDialect
             logsql = true
         }
     }

@@ -30,3 +30,21 @@ user can show off their collection.
 Please send any ideas you have for this little ficticious application to danvega at gmail dot com.
 
 .
+
+
+SETUP 
+===================================================================================
+
+I have my local instance running off of a mysql database. You can create a mysql database and change the user/pass
+to match somethng you setup or you can easily go back to an in memory h2 database. 1st in buildConfig.groovy
+you will want to comment out the following line. 
+
+	runtime 'mysql:mysql-connector-java:5.1.22'
+
+Next update the the datasource closure under development in DataSource.groovy to something like this
+
+	dataSource {
+	    dbCreate = "create-drop"
+	    url = "jdbc:h2:mem:sneakerhead;MVCC=TRUE;LOCK_TIMEOUT=10000"
+	}
+

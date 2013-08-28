@@ -12,7 +12,7 @@ class BootStrap {
         // i don't want to load this data during anything that is development
         switch(Environment.current){
 
-            case "development" : 
+            case Environment.DEVELOPMENT : 
 
                 // create a couple of brands
                 def nike = new Brand(name:'Nike').save()

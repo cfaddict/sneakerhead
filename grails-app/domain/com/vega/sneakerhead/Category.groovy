@@ -1,12 +1,9 @@
 package com.vega.sneakerhead
 
-import groovy.transform.ToString
-
-@ToString(includeNames=true)
 class Category {
 
 	String name
-	boolean active = Boolean.TRUE
+	boolean active = true
 	Date dateCreated
 	Date lastUpdated 
 
@@ -17,5 +14,9 @@ class Category {
     static constraints = {
     	name blank:false
     	active nullable:false
+    }
+
+    String toString() {
+    	"${name}"
     }
 }

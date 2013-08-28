@@ -1,8 +1,5 @@
 package com.vega.sneakerhead
 
-import groovy.transform.ToString
-
-@ToString(includeNames=true)
 class Image {
 
 	String name
@@ -10,12 +7,16 @@ class Image {
 	String caption
 	Date dateCreated
 	Date lastUpdated
-	boolean isMainImage = Boolean.FALSE
+	boolean isMainImage = true
 
 	static belongsTo = [ shoe : Shoe ]
 
     static constraints = {
     	name blank:false 
     	path nullable:false 
+    }
+
+    String toString() {
+    	"${name}"
     }
 }

@@ -1,8 +1,5 @@
 package com.vega.sneakerhead
 
-import groovy.transform.ToString
-
-@ToString(includeNames=true)
 class User {
 
     String firstName
@@ -13,7 +10,7 @@ class User {
     String state
     Double shoeSize
     String bio
-    boolean active = Boolean.TRUE
+    boolean active = true
     Date dateCreated
     Date lastUpdated
 
@@ -34,4 +31,7 @@ class User {
         bio type:'text'
     }
 
+    String toString() {
+        "${firstName} ${lastName}"
+    }
 }

@@ -1,13 +1,10 @@
 package com.vega.sneakerhead
 
-import groovy.transform.ToString
-
-@ToString(includeNames=true)
 class Shoe {
 
 	String title
 	String description
-	boolean active = Boolean.TRUE
+	boolean active = true
 	Date dateCreated
 	Date lastUpdated 
 
@@ -16,5 +13,9 @@ class Shoe {
 
     static constraints = {
     	title blank:false
+    }
+
+    String toString() {
+    	"${title}"
     }
 }
