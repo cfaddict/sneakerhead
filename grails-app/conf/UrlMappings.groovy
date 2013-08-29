@@ -8,6 +8,16 @@ class UrlMappings {
 			}
 		}
 
+		"/contact" {
+			controller = 'page'
+			action = 'contact'
+		}
+
+		"/blog" {
+			controller = 'page'
+			action = 'blog'
+		}
+
 		"/"(view:"/index")
 		"500"(view:'/error')
 	}

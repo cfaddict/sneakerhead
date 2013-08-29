@@ -1,66 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Sneakehead - Image List</title>
+</head>
+<body>
 
-<%@ page import="com.vega.sneakerhead.Image" %>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'image.label', default: 'Image')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#list-image" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-image" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+	<div class="row">
+		
+		<div class="col-md-12">
+
+			<g:link action="add">
+				<button type="button" class="btn btn-primary pull-right">
+					<span class="glyphicon glyphicon-plus"></span> Add Image
+				</button>
+			</g:link>
+
+			<h2>Images</h2>
+
+			<div class="clear">&nbsp;</div>
+
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="alert alert-warning">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="name" title="${message(code: 'image.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="path" title="${message(code: 'image.path.label', default: 'Path')}" />
-					
-						<g:sortableColumn property="caption" title="${message(code: 'image.caption.label', default: 'Caption')}" />
-					
-						<g:sortableColumn property="dateCreated" title="${message(code: 'image.dateCreated.label', default: 'Date Created')}" />
-					
-						<g:sortableColumn property="isMainImage" title="${message(code: 'image.isMainImage.label', default: 'Is Main Image')}" />
-					
-						<g:sortableColumn property="lastUpdated" title="${message(code: 'image.lastUpdated.label', default: 'Last Updated')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${imageInstanceList}" status="i" var="imageInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${imageInstance.id}">${fieldValue(bean: imageInstance, field: "name")}</g:link></td>
-					
-						<td>${fieldValue(bean: imageInstance, field: "path")}</td>
-					
-						<td>${fieldValue(bean: imageInstance, field: "caption")}</td>
-					
-						<td><g:formatDate date="${imageInstance.dateCreated}" /></td>
-					
-						<td><g:formatBoolean boolean="${imageInstance.isMainImage}" /></td>
-					
-						<td><g:formatDate date="${imageInstance.lastUpdated}" /></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
+
+			<table class="table table-condensed table-hover">
+			<thead>
+
+			</thead>
+			<tbody>
+
+			</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${imageInstanceTotal}" />
-			</div>
+
 		</div>
-	</body>
+
+
+	</div>
+
+</body>
 </html>

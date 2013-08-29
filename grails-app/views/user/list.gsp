@@ -1,66 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Sneakehead - User List</title>
+</head>
+<body>
 
-<%@ page import="com.vega.sneakerhead.User" %>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-user" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+	<div class="row">
+		
+		<div class="col-md-12">
+
+			<g:link action="add">
+				<button type="button" class="btn btn-primary pull-right">
+					<span class="glyphicon glyphicon-user"></span> Add User
+				</button>
+			</g:link>
+
+			<h2>Users</h2>
+
+			<div class="clear">&nbsp;</div>
+
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="alert alert-warning">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="firstName" title="${message(code: 'user.firstName.label', default: 'First Name')}" />
-					
-						<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Last Name')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
-					
-						<g:sortableColumn property="handle" title="${message(code: 'user.handle.label', default: 'Handle')}" />
-					
-						<g:sortableColumn property="shoeSize" title="${message(code: 'user.shoeSize.label', default: 'Shoe Size')}" />
-					
-						<g:sortableColumn property="bio" title="${message(code: 'user.bio.label', default: 'Bio')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${userInstanceList}" status="i" var="userInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "firstName")}</g:link></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "email")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "handle")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "shoeSize")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "bio")}</td>
-					
-					</tr>
+
+			<table class="table table-condensed table-hover">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email Address</th>
+					<th>Handle</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Active</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<g:each var="user" in="${users}">
+				<tr>
+					<td>${user.firstName}</td>
+					<td>${user.lastName}</td>
+					<td>${user.email}</td>
+					<td>${user.handle}</td>
+					<td>${user.city}</td>
+					<td>${user.state}</td>
+					<td><g:formatBoolean boolean="${user.active}" true="Yes" false="No"/></td>
+					<td>
+						<a href="${createLink(action:'edit',id:user.id)}">Edit</a> |
+						<a href="${createLink(action: 'delete',id:user.id)}">Delete</a>
+					</td>
+				</tr>
 				</g:each>
-				</tbody>
+			</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${userInstanceTotal}" />
-			</div>
+
 		</div>
-	</body>
+
+
+	</div>
+
+</body>
 </html>
