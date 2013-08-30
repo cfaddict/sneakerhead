@@ -1,6 +1,7 @@
 package com.vega.sneakerhead
 
 import org.junit.*
+import grails.test.mixin.Mock
 
 
 @Mock(User)

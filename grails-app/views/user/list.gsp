@@ -2,16 +2,6 @@
 <html lang="en">
 <head>
 	<title>Sneakehead - User List</title>
-	<script type="text/javascript">
-		$(function(){
-			$('.delete').click(function(e){
-				if( confirm("Are you sure you want to delete this record?") ) {
-					return true;
-				}
-				return false;
-			});
-		});
-	</script>	
 </head>
 <body>
 

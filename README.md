@@ -1,4 +1,5 @@
 Sneakerhead
+===================================================================================
 
 A small groovy and grails applicaiton to manage my shoe collection. This is just a small app I decided to write to help me learn Groovy and Grails. Think of this as a community based website where users can show off their sneaker collection.
 
@@ -33,9 +34,33 @@ Please send any ideas you have for this little ficticious application to danvega
 Setup
 ===================================================================================
 
-I have my local instance running off of a mysql database. You can create a mysql database and change the datasource
-settings for development to match your setup or you can easily go back to an in memory h2 database. 
-1st in buildConfig.groovy you will want to comment out the following line. 
+This application is currently using 
+
+	grails --version 2.2.2
+
+I have this application running off of the domain name http://sneakerhead.dev. Setup dns for this domain name as well as a virtual host.
+I am using apaache and my host looks something like this. If you're using apache make sure to enable mod_proxy.
+
+	#sneakerhead.dev
+	<VirtualHost *:80>
+	    ServerName sneakerhead.dev
+	    ServerAlias sneakerhead.dev
+	    DocumentRoot "C:\www\sneakerhead"
+
+	    ProxyPass / http://127.0.0.1:8080/
+	    ProxyPassReverse / http://127.0.0.1:8080/
+
+	    ErrorLog "logs/sneakerhead-error.log"
+	    CustomLog "logs/sneakerhead-access.log" common
+	</VirtualHost>
+
+Setup a mysql schema named sneakerhead and create the following user
+
+	user: sneakerhead
+	pass: sn3k3rh3ad
+
+You can easily go back to an in memory h2 database. Just know that if you choose to go this route you will have to update this
+every time you update from git. 1st in buildConfig.groovy you will want to comment out the following line. 
 
 	runtime 'mysql:mysql-connector-java:5.1.22'
 
@@ -46,3 +71,6 @@ Next update the the datasource closure under development in DataSource.groovy to
 	    url = "jdbc:h2:mem:sneakerhead;MVCC=TRUE;LOCK_TIMEOUT=10000"
 	}
 
+That is all there is to it, you should be able to run the app (grails run-app) and point your browser to
+
+	http://sneakerhead.dev

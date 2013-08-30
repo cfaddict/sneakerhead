@@ -11,6 +11,7 @@ modules = {
     	resource url: 'css/bootstrap-theme.min.css'
     	resource url: 'css/main.css'
     	resource url: 'js/bootstrap.min.js'
+        resource url: 'js/application.js'
     }
 
 }
