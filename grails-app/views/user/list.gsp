@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
 	<title>Sneakehead - User List</title>
+	<script type="text/javascript">
+		$(function(){
+			$('.delete').click(function(e){
+				if( confirm("Are you sure you want to delete this record?") ) {
+					return true;
+				}
+				return false;
+			});
+		});
+	</script>	
 </head>
 <body>
 
@@ -20,7 +30,7 @@
 			<div class="clear">&nbsp;</div>
 
 			<g:if test="${flash.message}">
-				<div class="alert alert-warning">${flash.message}</div>
+				<div class="alert alert-${flash.type ?: 'warning'}">${flash.message}</div>
 			</g:if>
 
 			<table class="table table-condensed table-hover">
@@ -42,13 +52,13 @@
 					<td>${user.firstName}</td>
 					<td>${user.lastName}</td>
 					<td>${user.email}</td>
-					<td>${user.handle}</td>
+					<td>@${user.handle}</td>
 					<td>${user.city}</td>
 					<td>${user.state}</td>
 					<td><g:formatBoolean boolean="${user.active}" true="Yes" false="No"/></td>
 					<td>
 						<a href="${createLink(action:'edit',id:user.id)}">Edit</a> |
-						<a href="${createLink(action: 'delete',id:user.id)}">Delete</a>
+						<a href="${createLink(action: 'delete',id:user.id)}" class="delete">Delete</a>
 					</td>
 				</tr>
 				</g:each>
