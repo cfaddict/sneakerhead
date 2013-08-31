@@ -11,13 +11,13 @@
 
 			<h3>Add/Edit User</h3>
 
-			<g:if test="${user.errors.errorCount > 0}">
+			<g:hasErrors bean="${user}">
 				<div class="alert alert-danger">
 				<g:eachError bean="${user}">
 				    <li><g:message error="${it}" /></li>
 				</g:eachError>
 				</div>
-			</g:if>
+			</g:hasErrors>
 
             <g:form action="save" name="frmSaveUser" class="form-horizontal">
 				<input type="hidden" name="id" value="${user.id}"/>

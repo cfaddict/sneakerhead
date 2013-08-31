@@ -9,13 +9,12 @@
 		
 		<div class="col-md-12">
 
+			<h2 class="pull-left">Users</h2>
 			<g:link action="add">
 				<button type="button" class="btn btn-primary pull-right">
 					<span class="glyphicon glyphicon-user"></span> Add User
 				</button>
 			</g:link>
-
-			<h2>Users</h2>
 
 			<div class="clear">&nbsp;</div>
 

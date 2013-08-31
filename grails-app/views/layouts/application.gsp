@@ -29,8 +29,8 @@
 					<li><a href="${createLink(controller:'image')}">Images</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/blog">Blog Posts</a></li>
-					<li><a href="/contact">Contact Me</a></li>
+					<li><a href="${createLink(controller: 'page', action: 'blog')}">Blog Posts</a></li>
+					<li><a href="${createLink(controller: 'page', action: 'contact')}">Contact Me</a></li>
 				</ul>						
 			</div>	
 		</div>
